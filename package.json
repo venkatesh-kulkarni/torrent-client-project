@@ -1,0 +1,11 @@
+{
+  "name": "Torrent Client",
+  "version": "1.0.0",
+  "description": "A bittorrent client ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "VPR",
+  "license": "ISC"
+}
