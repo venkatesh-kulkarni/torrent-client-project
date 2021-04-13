@@ -33,6 +33,12 @@ function udpSend(socket, message, rawUrl, callback = () => { }) {
 
 function respType(resp) {
     // ...
+
+    function respType(resp) {
+        const action = resp.readUInt32BE(0);
+        if (action === 0) return 'connect';
+        if (action === 1) return 'announce';
+    }
 }
 
 function buildConnReq() {
@@ -81,7 +87,7 @@ function buildAnnounceReq(connId) {
     // event
     buf.writeUInt32BE(0, 80);
     // ip address
-    buf.writeUInt32BE(0, 80);
+    buf.writeUInt32BE(0, 84);
     // key
     crypto.randomBytes(4).copy(buf, 88);
     // num want
